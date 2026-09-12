@@ -146,8 +146,8 @@ export function DynamicQrisModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
-      <div className="relative w-full max-w-md overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl transition-all">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-3 sm:p-4 backdrop-blur-sm">
+      <div className="relative w-full max-w-md max-h-[92vh] overflow-y-auto rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl transition-all">
         {/* Modal Header */}
         <div className="flex items-center justify-between border-b border-zinc-800/80 px-5 py-4">
           <div>

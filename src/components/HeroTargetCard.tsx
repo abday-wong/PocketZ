@@ -44,9 +44,9 @@ export function HeroTargetCard({
   const estimatedDays = remainingAmount > 0 ? Math.ceil(remainingAmount / 50000) : 0;
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 sm:p-6 shadow-xl backdrop-blur-sm transition-all">
+    <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/70 p-3.5 sm:p-6 shadow-xl backdrop-blur-sm transition-all">
       {/* Top Meta Bar */}
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-3.5 sm:mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="flex items-center gap-1 rounded bg-zinc-800/80 px-2 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-zinc-300">
             <span className="h-1.5 w-1.5 rounded-full bg-lime-400" />
@@ -69,7 +69,7 @@ export function HeroTargetCard({
       </div>
 
       {/* Main Grid: Media Viewport on Left/Top, Details on Right/Bottom */}
-      <div className="grid gap-5 md:grid-cols-12 md:gap-6">
+      <div className="grid gap-4 md:grid-cols-12 md:gap-6">
         {/* Media Frame (Visual Anchor) */}
         <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 md:col-span-5 md:aspect-square">
           {activeMedia ? (
@@ -152,7 +152,7 @@ export function HeroTargetCard({
             {/* Title & E-Commerce Link */}
             <div className="mb-2">
               <div className="flex items-start justify-between gap-2">
-                <h1 className="text-xl font-bold tracking-tight text-zinc-100 sm:text-2xl">
+                <h1 className="text-lg sm:text-2xl font-bold tracking-tight text-zinc-100">
                   {goal.title}
                 </h1>
                 {goal.productUrl && (
@@ -174,13 +174,13 @@ export function HeroTargetCard({
             </div>
 
             {/* Target Price & Current Saved */}
-            <div className="my-4 rounded-xl border border-zinc-800/80 bg-zinc-950/60 p-3.5">
+            <div className="my-3 sm:my-4 rounded-xl border border-zinc-800/80 bg-zinc-950/60 p-3 sm:p-3.5">
               <div className="flex items-baseline justify-between">
                 <div>
                   <span className="block text-[10px] font-mono uppercase tracking-wider text-zinc-500">
                     Terkumpul Riil
                   </span>
-                  <span className="font-mono text-xl font-bold text-lime-400 tabular-nums">
+                  <span className="font-mono text-lg sm:text-xl font-bold text-lime-400 tabular-nums">
                     {formatCurrency(goal.currentAmount)}
                   </span>
                 </div>
@@ -188,7 +188,7 @@ export function HeroTargetCard({
                   <span className="block text-[10px] font-mono uppercase tracking-wider text-zinc-500">
                     Harga Target
                   </span>
-                  <span className="font-mono text-sm font-semibold text-zinc-300 tabular-nums">
+                  <span className="font-mono text-xs sm:text-sm font-semibold text-zinc-300 tabular-nums">
                     {formatCurrency(goal.targetAmount)}
                   </span>
                 </div>

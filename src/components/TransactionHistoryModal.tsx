@@ -33,7 +33,7 @@ export function TransactionHistoryModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-3 sm:p-4 backdrop-blur-sm">
       <div className="relative max-h-[85vh] w-full max-w-lg overflow-hidden flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-zinc-800/80 px-5 py-4">

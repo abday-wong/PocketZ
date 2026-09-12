@@ -15,6 +15,7 @@ import { SavingsGoal } from '@/types';
 import { Plus, Loader2 } from 'lucide-react';
 import { LoginScreen } from '@/components/LoginScreen';
 import { ProfileBar } from '@/components/ProfileBar';
+import { MobileBottomNav } from '@/components/MobileBottomNav';
 
 export default function Home() {
   const { goals, activeInvoiceId, user, setUser } = usePocketStore();
@@ -130,7 +131,7 @@ export default function Home() {
       <PendingBanner onOpenQris={handleOpenExistingQris} />
 
       {/* Main Content Area */}
-      <main className="flex-1 mx-auto w-full max-w-4xl px-4 py-6 sm:px-6">
+      <main className="flex-1 mx-auto w-full max-w-4xl px-3 sm:px-6 py-4 sm:py-6 pb-28 sm:pb-8">
         {/* User Profile Bar */}
         <ProfileBar
           onOpenVault={() => setIsVaultOpen(true)}
@@ -174,6 +175,15 @@ export default function Home() {
           </div>
         )}
       </main>
+
+      {/* Mobile Bottom Navigation Bar (Visible only on mobile) */}
+      <MobileBottomNav
+        onOpenDepositQris={() => handleOpenDepositQris(primaryGoal ? primaryGoal.id : '')}
+        onOpenSkipJajan={() => handleOpenSkipJajan(primaryGoal ? primaryGoal.id : '')}
+        onOpenVault={() => setIsVaultOpen(true)}
+        onOpenHistory={() => setIsHistoryOpen(true)}
+        onOpenAddGoal={handleOpenAddGoal}
+      />
 
       {/* Industrial Minimal Footer */}
       <footer className="border-t border-zinc-900 bg-zinc-950/60 py-5 text-center text-xs font-mono text-zinc-600">

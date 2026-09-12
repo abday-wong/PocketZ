@@ -83,7 +83,7 @@ export function SecondaryGoalsList({
                   <div className="flex-1 min-w-0">
                     <h3 className="text-xs font-bold text-zinc-100 truncate">{goal.title}</h3>
                     <div className="mt-1 flex items-baseline justify-between text-[11px] font-mono">
-                      <span className="font-semibold text-lime-400 tabular-nums">
+                      <span className="font-semibold text-white tabular-nums">
                         {formatCurrency(goal.currentAmount)}
                       </span>
                       <span className="text-zinc-500 tabular-nums">
@@ -92,9 +92,9 @@ export function SecondaryGoalsList({
                     </div>
 
                     {/* Mini Progress Bar */}
-                    <div className="relative mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
+                    <div className="relative mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-zinc-900">
                       <div
-                        className="h-full rounded-full bg-lime-400/80"
+                        className="h-full rounded-full bg-white"
                         style={{ width: `${percentage}%` }}
                       />
                     </div>
@@ -103,10 +103,10 @@ export function SecondaryGoalsList({
               </div>
 
               {/* Bottom Actions */}
-              <div className="mt-3.5 flex items-center justify-between border-t border-zinc-800/60 pt-2.5">
+              <div className="mt-3.5 flex items-center justify-between border-t border-zinc-900 pt-2.5">
                 <button
                   onClick={() => setPrimaryGoal(goal.id)}
-                  className="flex items-center gap-1 text-[11px] font-mono text-zinc-400 hover:text-amber-400 transition-colors"
+                  className="flex items-center gap-1 text-[11px] font-mono text-zinc-500 hover:text-white transition-colors"
                   title="Pindahkan ke posisi Hero target utama"
                 >
                   <Star className="h-3 w-3" />
@@ -116,7 +116,7 @@ export function SecondaryGoalsList({
                 <div className="flex items-center gap-1.5">
                   <button
                     onClick={() => onEditGoal(goal)}
-                    className="p-1 text-zinc-500 hover:text-zinc-300"
+                    className="p-1 text-zinc-500 hover:text-zinc-200"
                     title="Edit"
                   >
                     <Edit3 className="h-3.5 w-3.5" />
@@ -132,7 +132,7 @@ export function SecondaryGoalsList({
 
                   <button
                     onClick={() => onDepositQris(goal.id)}
-                    className="flex items-center gap-1 rounded-lg bg-zinc-800 px-2.5 py-1 text-[11px] font-mono font-medium text-lime-400 hover:bg-zinc-700 transition-colors"
+                    className="flex items-center gap-1 rounded-lg border border-zinc-800 bg-zinc-900 px-2.5 py-1 text-[11px] font-mono font-medium text-white hover:bg-zinc-800 transition-colors"
                   >
                     <QrCode className="h-3 w-3" />
                     <span>Setor</span>

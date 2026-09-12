@@ -117,7 +117,7 @@ export function DynamicQrisModal({
           particleCount: 70,
           spread: 60,
           origin: { y: 0.6 },
-          colors: ['#bef264', '#a3e635', '#ffffff'],
+          colors: ['#ffffff', '#e4e4e7', '#d4d4d8', '#a1a1aa'],
         });
       } catch {
         // Fallback silently if canvas not available
@@ -147,13 +147,13 @@ export function DynamicQrisModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-3 sm:p-4 backdrop-blur-sm">
-      <div className="relative w-full max-w-md max-h-[92vh] overflow-y-auto rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl transition-all">
+      <div className="relative w-full max-w-md max-h-[92vh] overflow-y-auto rounded-2xl border border-zinc-900 bg-zinc-950 shadow-2xl transition-all">
         {/* Modal Header */}
-        <div className="flex items-center justify-between border-b border-zinc-800/80 px-5 py-4">
+        <div className="flex items-center justify-between border-b border-zinc-900 px-5 py-4">
           <div>
             <div className="flex items-center gap-1.5">
-              <QrCode className="h-4 w-4 text-lime-400" />
-              <h2 className="font-mono text-sm font-bold uppercase tracking-wider text-zinc-100">
+              <QrCode className="h-4 w-4 text-white" />
+              <h2 className="font-mono text-sm font-bold uppercase tracking-wider text-white">
                 Dynamic QRIS Deposit
               </h2>
             </div>
@@ -161,7 +161,7 @@ export function DynamicQrisModal({
           </div>
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200 transition-colors"
+            className="rounded-lg p-1.5 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-colors"
           >
             <X className="h-4 w-4" />
           </button>
@@ -188,8 +188,8 @@ export function DynamicQrisModal({
                     }}
                     className={`rounded-xl border py-2.5 px-3 text-xs font-mono font-semibold transition-all ${
                       selectedAmount === amt && !customAmount
-                        ? 'border-lime-400 bg-lime-400/10 text-lime-300'
-                        : 'border-zinc-800 bg-zinc-950/60 text-zinc-300 hover:border-zinc-700'
+                        ? 'border-white bg-white text-black'
+                        : 'border-zinc-900 bg-zinc-900/60 text-zinc-300 hover:border-zinc-800'
                     }`}
                   >
                     {formatCurrency(amt)}
@@ -214,7 +214,7 @@ export function DynamicQrisModal({
                       setCustomAmount(e.target.value);
                       setSelectedAmount(0);
                     }}
-                    className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-9 py-2 font-mono text-sm text-zinc-100 placeholder-zinc-600 focus:border-lime-400 focus:outline-none"
+                    className="w-full rounded-xl border border-zinc-900 bg-black px-9 py-2 font-mono text-sm text-white placeholder-zinc-700 focus:border-zinc-700 focus:outline-none"
                   />
                 </div>
               </div>
@@ -222,7 +222,7 @@ export function DynamicQrisModal({
               {/* Generate Button */}
               <button
                 onClick={handleGenerateQris}
-                className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-lime-400 py-3 font-mono text-xs font-bold uppercase tracking-wider text-zinc-950 hover:bg-lime-300 active:scale-[0.99] transition-all"
+                className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-white py-3 font-mono text-xs font-bold uppercase tracking-wider text-black hover:bg-zinc-200 active:scale-[0.99] transition-all shadow-md"
               >
                 <span>Buat Dynamic QRIS</span>
                 <ArrowRight className="h-4 w-4" />
@@ -243,14 +243,14 @@ export function DynamicQrisModal({
               )}
 
               {activeTx.status === 'SUCCESS' && (
-                <div className="mb-3 flex items-center gap-2 rounded-full border border-lime-500/30 bg-lime-500/10 px-3 py-1 text-xs font-mono text-lime-400">
-                  <CheckCircle2 className="h-3.5 w-3.5" />
+                <div className="mb-3 flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-xs font-mono text-white">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-white" />
                   <span>BERHASIL NABUNG — Progres Bertambah!</span>
                 </div>
               )}
 
               {activeTx.status === 'EXPIRED' && (
-                <div className="mb-3 flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-xs font-mono text-zinc-400">
+                <div className="mb-3 flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-xs font-mono text-zinc-500">
                   <AlertCircle className="h-3.5 w-3.5" />
                   <span>Invoice Kedaluwarsa</span>
                 </div>
@@ -258,8 +258,8 @@ export function DynamicQrisModal({
 
               {/* Locked Nominal */}
               <div className="mb-3 flex items-center gap-1.5 text-zinc-400">
-                <Lock className="h-3.5 w-3.5 text-lime-400" />
-                <span className="font-mono text-2xl font-bold tracking-tight text-zinc-100 tabular-nums">
+                <Lock className="h-3.5 w-3.5 text-zinc-400" />
+                <span className="font-mono text-2xl font-bold tracking-tight text-white tabular-nums">
                   {formatCurrency(activeTx.amount)}
                 </span>
               </div>
@@ -304,7 +304,7 @@ export function DynamicQrisModal({
                   title="Salin Invoice ID"
                 >
                   {copiedInvoice ? (
-                    <Check className="h-3 w-3 text-lime-400" />
+                    <Check className="h-3 w-3 text-white" />
                   ) : (
                     <Copy className="h-3 w-3" />
                   )}
@@ -318,9 +318,9 @@ export function DynamicQrisModal({
                     {/* Sandbox / Testing Simulator Button */}
                     <button
                       onClick={handleSimulatePayment}
-                      className="flex w-full items-center justify-center gap-1.5 rounded-xl border border-lime-500/40 bg-lime-500/10 py-2.5 font-mono text-xs font-semibold text-lime-400 hover:bg-lime-500/20 active:scale-[0.99] transition-all"
+                      className="flex w-full items-center justify-center gap-1.5 rounded-xl border border-zinc-800 bg-zinc-900 py-2.5 font-mono text-xs font-semibold text-zinc-200 hover:bg-zinc-800 active:scale-[0.99] transition-all"
                     >
-                      <ShieldCheck className="h-3.5 w-3.5" />
+                      <ShieldCheck className="h-3.5 w-3.5 text-zinc-400" />
                       <span>Simulasi Pembayaran Sukses (Dev)</span>
                     </button>
 

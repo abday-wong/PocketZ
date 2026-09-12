@@ -105,9 +105,9 @@ export default function Home() {
 
   if (isCheckingAuth) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-zinc-950 text-zinc-400">
+      <div className="flex min-h-screen items-center justify-center bg-black text-zinc-400">
         <div className="flex items-center gap-2 font-mono text-xs">
-          <Loader2 className="h-4 w-4 animate-spin text-lime-400" />
+          <Loader2 className="h-4 w-4 animate-spin text-white" />
           <span>Memuat PocketZ...</span>
         </div>
       </div>
@@ -119,7 +119,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col font-sans selection:bg-lime-400 selection:text-zinc-950">
+    <div className="min-h-screen bg-black text-zinc-100 flex flex-col font-sans selection:bg-white selection:text-black">
       {/* Sticky Navigation */}
       <Navbar
         onOpenVault={() => setIsVaultOpen(true)}
@@ -167,7 +167,7 @@ export default function Home() {
             </p>
             <button
               onClick={handleOpenAddGoal}
-              className="mt-4 flex items-center gap-2 rounded-xl bg-lime-400 px-4 py-2.5 font-mono text-xs font-bold text-zinc-950 hover:bg-lime-300 transition-colors"
+              className="mt-4 flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 font-mono text-xs font-bold text-black hover:bg-zinc-200 transition-colors"
             >
               <Plus className="h-4 w-4" />
               <span>Buat Target Pertama</span>

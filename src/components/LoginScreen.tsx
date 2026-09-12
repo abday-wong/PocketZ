@@ -55,19 +55,19 @@ export function LoginScreen() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-zinc-950 px-4 text-zinc-100 font-sans selection:bg-lime-400 selection:text-zinc-950">
+    <div className="flex min-h-screen w-full items-center justify-center bg-black px-4 text-zinc-100 font-sans selection:bg-white selection:text-black">
       <div className="w-full max-w-md">
         {/* Main Auth Card */}
-        <div className="relative overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/60 p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+        <div className="relative overflow-hidden rounded-2xl border border-zinc-900 bg-zinc-950 p-6 sm:p-8 shadow-2xl backdrop-blur-md">
           {/* Subtle Accent Glow */}
-          <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-lime-400/5 blur-3xl" />
+          <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-white/5 blur-3xl" />
 
           {/* Brand Header */}
           <div className="mb-6 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/80 px-3 py-1 mb-4">
-              <span className="h-2 w-2 rounded-full bg-lime-400 ring-2 ring-lime-400/20 animate-pulse" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-zinc-900 bg-black px-3 py-1 mb-4">
+              <span className="h-1.5 w-1.5 rounded-full bg-white ring-2 ring-zinc-800" />
               <span className="font-mono text-xs font-semibold tracking-wider text-zinc-300 uppercase">
-                POCKET<span className="text-lime-400">Z</span> VAULT
+                POCKET<span className="text-zinc-400">Z</span> VAULT
               </span>
             </div>
 
@@ -123,17 +123,17 @@ export function LoginScreen() {
           </div>
 
           {/* Security Features Checklist */}
-          <div className="mt-6 border-t border-zinc-800/80 pt-4 text-[11px] font-mono text-zinc-400 space-y-2">
+          <div className="mt-6 border-t border-zinc-900 pt-4 text-[11px] font-mono text-zinc-400 space-y-2">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-3.5 w-3.5 text-lime-400 shrink-0" />
+              <CheckCircle2 className="h-3.5 w-3.5 text-zinc-300 shrink-0" />
               <span>Sesi terenkripsi HTTP-Only JWT</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-3.5 w-3.5 text-lime-400 shrink-0" />
+              <CheckCircle2 className="h-3.5 w-3.5 text-zinc-300 shrink-0" />
               <span>Data target barang tersimpan aman di perangkatmu</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-3.5 w-3.5 text-lime-400 shrink-0" />
+              <CheckCircle2 className="h-3.5 w-3.5 text-zinc-300 shrink-0" />
               <span>Verifikasi identitas tanpa password manual</span>
             </div>
           </div>

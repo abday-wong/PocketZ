@@ -34,7 +34,7 @@ export function TransactionHistoryModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-3 sm:p-4 backdrop-blur-sm">
-      <div className="relative max-h-[85vh] w-full max-w-lg overflow-hidden flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl">
+      <div className="relative max-h-[85vh] w-full max-w-lg overflow-hidden flex flex-col rounded-2xl border border-zinc-800 bg-black shadow-2xl">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-zinc-800/80 px-5 py-4">
           <h2 className="font-mono text-sm font-bold uppercase tracking-wider text-zinc-100">
@@ -91,7 +91,7 @@ export function TransactionHistoryModal({
                     {/* Status Icon */}
                     <div className="mt-0.5">
                       {isSuccess ? (
-                        <CheckCircle2 className="h-4 w-4 text-lime-400" />
+                        <CheckCircle2 className="h-4 w-4 text-white" />
                       ) : isPending ? (
                         <Clock className="h-4 w-4 text-amber-400 animate-pulse" />
                       ) : (
@@ -105,7 +105,7 @@ export function TransactionHistoryModal({
                           {getGoalTitle(tx.goalId)}
                         </span>
                         {tx.sourceType === 'skip_jajan' && (
-                          <span className="flex items-center gap-1 rounded bg-amber-500/10 px-1.5 py-0.2 text-[9px] font-mono text-amber-300">
+                          <span className="flex items-center gap-1 rounded bg-zinc-800 px-1.5 py-0.5 text-[9px] font-mono text-zinc-300 border border-zinc-700">
                             <Coffee className="h-2.5 w-2.5" />
                             {tx.sourceLabel || 'Skip Jajan'}
                           </span>
@@ -129,7 +129,7 @@ export function TransactionHistoryModal({
                     <span
                       className={`block font-mono text-xs font-bold tabular-nums ${
                         isSuccess
-                          ? 'text-lime-400'
+                          ? 'text-white'
                           : isPending
                           ? 'text-amber-300'
                           : 'text-zinc-500 line-through'

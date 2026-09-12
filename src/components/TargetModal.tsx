@@ -134,7 +134,7 @@ export function TargetModal({ isOpen, onClose, goalToEdit }: TargetModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
-      <div className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-zinc-800 bg-zinc-900 p-5 sm:p-6 shadow-2xl">
+      <div className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-zinc-800 bg-black p-5 sm:p-6 shadow-2xl">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-zinc-800/80 pb-4">
           <h2 className="font-mono text-sm font-bold uppercase tracking-wider text-zinc-100">
@@ -161,7 +161,7 @@ export function TargetModal({ isOpen, onClose, goalToEdit }: TargetModalProps) {
               placeholder="Contoh: Sony WH-1000XM5 Black"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2.5 text-xs text-zinc-100 placeholder-zinc-600 focus:border-lime-400 focus:outline-none"
+              className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2.5 text-xs text-zinc-100 placeholder-zinc-600 focus:border-white focus:outline-none"
             />
           </div>
 
@@ -180,7 +180,7 @@ export function TargetModal({ isOpen, onClose, goalToEdit }: TargetModalProps) {
                 placeholder="4500000"
                 value={targetAmount}
                 onChange={(e) => setTargetAmount(e.target.value)}
-                className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-10 py-2.5 font-mono text-xs text-zinc-100 placeholder-zinc-600 focus:border-lime-400 focus:outline-none tabular-nums"
+                className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-10 py-2.5 font-mono text-xs text-zinc-100 placeholder-zinc-600 focus:border-white focus:outline-none tabular-nums"
               />
             </div>
           </div>
@@ -245,7 +245,7 @@ export function TargetModal({ isOpen, onClose, goalToEdit }: TargetModalProps) {
                 placeholder="Atau tempel URL gambar (https://...)"
                 value={externalUrl}
                 onChange={(e) => setExternalUrl(e.target.value)}
-                className="flex-1 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-[11px] text-zinc-200 placeholder-zinc-600 focus:border-lime-400 focus:outline-none"
+                className="flex-1 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-[11px] text-zinc-200 placeholder-zinc-600 focus:border-white focus:outline-none"
               />
               <button
                 type="button"
@@ -304,7 +304,7 @@ export function TargetModal({ isOpen, onClose, goalToEdit }: TargetModalProps) {
                 placeholder="https://tokopedia.com/... atau https://shopee.co.id/..."
                 value={productUrl}
                 onChange={(e) => setProductUrl(e.target.value)}
-                className="w-full rounded-xl border border-zinc-800 bg-zinc-950 pl-9 pr-3.5 py-2.5 text-xs text-zinc-100 placeholder-zinc-600 focus:border-lime-400 focus:outline-none font-mono"
+                className="w-full rounded-xl border border-zinc-800 bg-zinc-950 pl-9 pr-3.5 py-2.5 text-xs text-zinc-100 placeholder-zinc-600 focus:border-white focus:outline-none font-mono"
               />
             </div>
           </div>
@@ -319,7 +319,7 @@ export function TargetModal({ isOpen, onClose, goalToEdit }: TargetModalProps) {
               placeholder="Mengapa barang ini penting untuk kamu beli?"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-lime-400 focus:outline-none"
+              className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-white focus:outline-none"
             />
           </div>
 
@@ -330,7 +330,7 @@ export function TargetModal({ isOpen, onClose, goalToEdit }: TargetModalProps) {
               id="isPrimary"
               checked={isPrimary}
               onChange={(e) => setIsPrimary(e.target.checked)}
-              className="h-4 w-4 rounded border-zinc-700 bg-zinc-900 text-lime-400 focus:ring-lime-400"
+              className="h-4 w-4 rounded border-zinc-700 bg-zinc-900 text-white accent-white focus:ring-white"
             />
             <label htmlFor="isPrimary" className="text-xs font-mono text-zinc-300 cursor-pointer">
               Jadikan Target Utama (Hero di Beranda)
@@ -348,7 +348,7 @@ export function TargetModal({ isOpen, onClose, goalToEdit }: TargetModalProps) {
             </button>
             <button
               type="submit"
-              className="rounded-xl bg-lime-400 px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider text-zinc-950 hover:bg-lime-300 transition-colors"
+              className="rounded-xl bg-white px-5 py-2.5 font-mono text-xs font-bold uppercase tracking-wider text-black hover:bg-zinc-200 transition-colors"
             >
               {goalToEdit ? 'Simpan Perubahan' : 'Buat Target'}
             </button>

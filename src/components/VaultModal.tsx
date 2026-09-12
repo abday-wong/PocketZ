@@ -48,11 +48,11 @@ export function VaultModal({ isOpen, onClose }: VaultModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-3 sm:p-4 backdrop-blur-sm">
-      <div className="relative w-full max-w-md max-h-[92vh] overflow-y-auto rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl transition-all">
+      <div className="relative w-full max-w-md max-h-[92vh] overflow-y-auto rounded-2xl border border-zinc-800 bg-black shadow-2xl transition-all">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-zinc-800/80 px-5 py-4">
           <div className="flex items-center gap-2">
-            <Landmark className="h-4 w-4 text-lime-400" />
+            <Landmark className="h-4 w-4 text-white" />
             <h2 className="font-mono text-sm font-bold uppercase tracking-wider text-zinc-100">
               Rekening Vault Tujuan
             </h2>
@@ -96,8 +96,8 @@ export function VaultModal({ isOpen, onClose }: VaultModalProps) {
                     >
                       {copied ? (
                         <>
-                          <Check className="h-3 w-3 text-lime-400" />
-                          <span className="text-lime-400">Tersalin</span>
+                          <Check className="h-3 w-3 text-white" />
+                          <span className="text-white">Tersalin</span>
                         </>
                       ) : (
                         <>
@@ -119,15 +119,15 @@ export function VaultModal({ isOpen, onClose }: VaultModalProps) {
               </div>
 
               {/* Total Balance Ready for Payout */}
-              <div className="mt-3 rounded-xl border border-lime-500/20 bg-lime-500/5 p-3.5">
+              <div className="mt-3 rounded-xl border border-white/20 bg-zinc-950 p-3.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <Shield className="h-4 w-4 text-lime-400" />
+                    <Shield className="h-4 w-4 text-white" />
                     <span className="text-xs font-mono font-medium text-zinc-300">
                       Total Dana Terkumpul Riil:
                     </span>
                   </div>
-                  <span className="font-mono text-sm font-bold text-lime-400 tabular-nums">
+                  <span className="font-mono text-sm font-bold text-white tabular-nums">
                     {formatCurrency(totalVerifiedSavings)}
                   </span>
                 </div>
@@ -153,7 +153,7 @@ export function VaultModal({ isOpen, onClose }: VaultModalProps) {
                   value={bankName}
                   onChange={(e) => setBankName(e.target.value)}
                   placeholder="Contoh: Bank Jago / SeaBank / BCA"
-                  className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-lime-400 focus:outline-none"
+                  className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-white focus:outline-none"
                 />
               </div>
 
@@ -165,7 +165,7 @@ export function VaultModal({ isOpen, onClose }: VaultModalProps) {
                   value={accountNumber}
                   onChange={(e) => setAccountNumber(e.target.value)}
                   placeholder="Contoh: 1082-9381-0021"
-                  className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-lime-400 focus:outline-none font-mono"
+                  className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-white focus:outline-none font-mono"
                 />
               </div>
 
@@ -177,7 +177,7 @@ export function VaultModal({ isOpen, onClose }: VaultModalProps) {
                   value={accountHolder}
                   onChange={(e) => setAccountHolder(e.target.value)}
                   placeholder="Contoh: Abday Hafidz"
-                  className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-lime-400 focus:outline-none"
+                  className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-white focus:outline-none"
                 />
               </div>
 
@@ -188,7 +188,7 @@ export function VaultModal({ isOpen, onClose }: VaultModalProps) {
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="Contoh: Kantong Kunci bunga 4.5%"
-                  className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-lime-400 focus:outline-none"
+                  className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-xs text-zinc-100 placeholder-zinc-600 focus:border-white focus:outline-none"
                 />
               </div>
 
@@ -202,7 +202,7 @@ export function VaultModal({ isOpen, onClose }: VaultModalProps) {
                 </button>
                 <button
                   type="submit"
-                  className="rounded-xl bg-lime-400 px-4 py-2 text-xs font-mono font-bold text-zinc-950 hover:bg-lime-300"
+                  className="rounded-xl bg-white px-4 py-2 text-xs font-mono font-bold text-black hover:bg-zinc-200 transition-colors"
                 >
                   Simpan Rekening
                 </button>

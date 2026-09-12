@@ -11,8 +11,11 @@ interface PocketStore {
   lastSavedDate: string | null;
   hideBalance: boolean;
   activeInvoiceId: string | null;
+  user: import('@/types').AuthUser | null;
 
   // Actions
+  setUser: (user: import('@/types').AuthUser | null) => void;
+  logout: () => void;
   addGoal: (goal: Omit<SavingsGoal, 'id' | 'createdAt' | 'updatedAt' | 'currentAmount'>) => string;
   updateGoal: (id: string, updates: Partial<SavingsGoal>) => void;
   deleteGoal: (id: string) => void;
@@ -135,6 +138,14 @@ export const usePocketStore = create<PocketStore>()(
       lastSavedDate: new Date(Date.now() - 86400000).toISOString(),
       hideBalance: false,
       activeInvoiceId: null,
+      user: null,
+
+      setUser: (user) => set({ user }),
+
+      logout: () => {
+        set({ user: null });
+        fetch('/api/auth/logout', { method: 'POST' }).catch(() => {});
+      },
 
       addGoal: (goalData) => {
         const id = 'goal-' + Date.now().toString(36) + Math.random().toString(36).substring(2, 5);

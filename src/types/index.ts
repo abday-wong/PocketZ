@@ -43,3 +43,11 @@ export interface SavingsTransaction {
   paidAt?: string;
   createdAt: string;
 }
+
+export interface AuthUser {
+  id: string;
+  email: string;
+  name: string;
+  avatar?: string;
+}
+

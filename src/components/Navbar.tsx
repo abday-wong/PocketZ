@@ -3,7 +3,7 @@
 import React from 'react';
 import { usePocketStore } from '@/store/usePocketStore';
 import { formatCurrency } from '@/lib/qris';
-import { Eye, EyeOff, Flame, Landmark, History, Plus } from 'lucide-react';
+import { Eye, EyeOff, Flame, Landmark, History, Plus, LogOut } from 'lucide-react';
 
 interface NavbarProps {
   onOpenVault: () => void;
@@ -12,7 +12,7 @@ interface NavbarProps {
 }
 
 export function Navbar({ onOpenVault, onOpenHistory, onOpenAddGoal }: NavbarProps) {
-  const { goals, transactions, streak, hideBalance, toggleHideBalance } = usePocketStore();
+  const { goals, transactions, streak, hideBalance, toggleHideBalance, user, logout } = usePocketStore();
 
   // Total real savings = sum of all SUCCESS transactions
   const totalVerifiedSavings = transactions
@@ -92,6 +92,31 @@ export function Navbar({ onOpenVault, onOpenHistory, onOpenAddGoal }: NavbarProp
             <Plus className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Target Baru</span>
           </button>
+
+          {/* User Profile & Logout */}
+          {user && (
+            <div className="flex items-center gap-1.5 border-l border-zinc-800 pl-2 ml-1">
+              <div
+                className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full border border-zinc-700 bg-zinc-800 text-[10px] font-mono font-bold text-zinc-200"
+                title={`Login sebagai: ${user.name} (${user.email})`}
+              >
+                {user.avatar ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={user.avatar} alt={user.name} className="h-full w-full object-cover" />
+                ) : (
+                  <span>{user.name.charAt(0).toUpperCase()}</span>
+                )}
+              </div>
+              <button
+                onClick={logout}
+                className="rounded-lg p-1.5 text-zinc-500 hover:bg-zinc-800 hover:text-red-400 transition-colors"
+                title="Keluar / Logout"
+                aria-label="Logout"
+              >
+                <LogOut className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </header>

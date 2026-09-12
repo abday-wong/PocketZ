@@ -12,10 +12,27 @@ import { TargetModal } from '@/components/TargetModal';
 import { VaultModal } from '@/components/VaultModal';
 import { TransactionHistoryModal } from '@/components/TransactionHistoryModal';
 import { SavingsGoal } from '@/types';
-import { Plus } from 'lucide-react';
+import { Plus, Loader2 } from 'lucide-react';
+import { LoginScreen } from '@/components/LoginScreen';
 
 export default function Home() {
-  const { goals, activeInvoiceId } = usePocketStore();
+  const { goals, activeInvoiceId, user, setUser } = usePocketStore();
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+
+  // Check auth session on load
+  useEffect(() => {
+    fetch('/api/auth/me')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.user) {
+          setUser(data.user);
+        }
+      })
+      .catch(() => {})
+      .finally(() => {
+        setIsCheckingAuth(false);
+      });
+  }, [setUser]);
 
   // Modals state
   const [isVaultOpen, setIsVaultOpen] = useState(false);
@@ -83,6 +100,21 @@ export default function Home() {
     setGoalToEdit(goal);
     setIsTargetModalOpen(true);
   };
+
+  if (isCheckingAuth) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-zinc-950 text-zinc-400">
+        <div className="flex items-center gap-2 font-mono text-xs">
+          <Loader2 className="h-4 w-4 animate-spin text-lime-400" />
+          <span>Memuat PocketZ...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <LoginScreen />;
+  }
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col font-sans selection:bg-lime-400 selection:text-zinc-950">

@@ -14,6 +14,7 @@ import { TransactionHistoryModal } from '@/components/TransactionHistoryModal';
 import { SavingsGoal } from '@/types';
 import { Plus, Loader2 } from 'lucide-react';
 import { LoginScreen } from '@/components/LoginScreen';
+import { ProfileBar } from '@/components/ProfileBar';
 
 export default function Home() {
   const { goals, activeInvoiceId, user, setUser } = usePocketStore();
@@ -130,6 +131,12 @@ export default function Home() {
 
       {/* Main Content Area */}
       <main className="flex-1 mx-auto w-full max-w-4xl px-4 py-6 sm:px-6">
+        {/* User Profile Bar */}
+        <ProfileBar
+          onOpenVault={() => setIsVaultOpen(true)}
+          onOpenHistory={() => setIsHistoryOpen(true)}
+        />
+
         {primaryGoal ? (
           <>
             {/* Hero Target Section */}
